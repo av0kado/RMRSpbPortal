@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67B236CDF440066DDE6 /* AppDelegate.swift */; };
-		630DA67E236CDF440066DDE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67D236CDF440066DDE6 /* SceneDelegate.swift */; };
-		630DA680236CDF440066DDE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67F236CDF440066DDE6 /* ContentView.swift */; };
-		630DA682236CDF450066DDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA681236CDF450066DDE6 /* Assets.xcassets */; };
-		630DA685236CDF450066DDE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA684236CDF450066DDE6 /* Preview Assets.xcassets */; };
-		630DA688236CDF450066DDE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630DA686236CDF450066DDE6 /* LaunchScreen.storyboard */; };
+		630DA693236CE52D0066DDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA681236CDF450066DDE6 /* Assets.xcassets */; };
+		630DA694236CE52E0066DDE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630DA686236CDF450066DDE6 /* LaunchScreen.storyboard */; };
+		630DA695236CE53E0066DDE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA684236CDF450066DDE6 /* Preview Assets.xcassets */; };
+		630DA698236CE6770066DDE6 /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA697236CE6770066DDE6 /* ApplicationFlow.swift */; };
+		630DA69B236CE93F0066DDE6 /* MainMenuFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA69A236CE93F0066DDE6 /* MainMenuFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		630DA678236CDF440066DDE6 /* RMRSpbPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMRSpbPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630DA67B236CDF440066DDE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		630DA67D236CDF440066DDE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		630DA67F236CDF440066DDE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		630DA681236CDF450066DDE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		630DA684236CDF450066DDE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		630DA687236CDF450066DDE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		630DA689236CDF450066DDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630DA690236CE4E20066DDE6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630DA697236CE6770066DDE6 /* ApplicationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlow.swift; sourceTree = "<group>"; };
+		630DA69A236CE93F0066DDE6 /* MainMenuFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +56,10 @@
 		630DA67A236CDF440066DDE6 /* RMRSpbPortal */ = {
 			isa = PBXGroup;
 			children = (
+				630DA690236CE4E20066DDE6 /* Info.plist */,
 				630DA67B236CDF440066DDE6 /* AppDelegate.swift */,
-				630DA67D236CDF440066DDE6 /* SceneDelegate.swift */,
-				630DA67F236CDF440066DDE6 /* ContentView.swift */,
-				630DA681236CDF450066DDE6 /* Assets.xcassets */,
-				630DA686236CDF450066DDE6 /* LaunchScreen.storyboard */,
-				630DA689236CDF450066DDE6 /* Info.plist */,
-				630DA683236CDF450066DDE6 /* Preview Content */,
+				630DA696236CE5D80066DDE6 /* Presentation */,
+				630DA68F236CE3D50066DDE6 /* Resources */,
 			);
 			path = RMRSpbPortal;
 			sourceTree = "<group>";
@@ -73,6 +70,33 @@
 				630DA684236CDF450066DDE6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		630DA68F236CE3D50066DDE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				630DA683236CDF450066DDE6 /* Preview Content */,
+				630DA681236CDF450066DDE6 /* Assets.xcassets */,
+				630DA686236CDF450066DDE6 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		630DA696236CE5D80066DDE6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				630DA697236CE6770066DDE6 /* ApplicationFlow.swift */,
+				630DA699236CE8790066DDE6 /* MainMenuFlow */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		630DA699236CE8790066DDE6 /* MainMenuFlow */ = {
+			isa = PBXGroup;
+			children = (
+				630DA69A236CE93F0066DDE6 /* MainMenuFlow.swift */,
+			);
+			path = MainMenuFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630DA688236CDF450066DDE6 /* LaunchScreen.storyboard in Resources */,
-				630DA685236CDF450066DDE6 /* Preview Assets.xcassets in Resources */,
-				630DA682236CDF450066DDE6 /* Assets.xcassets in Resources */,
+				630DA693236CE52D0066DDE6 /* Assets.xcassets in Resources */,
+				630DA694236CE52E0066DDE6 /* LaunchScreen.storyboard in Resources */,
+				630DA695236CE53E0066DDE6 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630DA698236CE6770066DDE6 /* ApplicationFlow.swift in Sources */,
+				630DA69B236CE93F0066DDE6 /* MainMenuFlow.swift in Sources */,
 				630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */,
-				630DA67E236CDF440066DDE6 /* SceneDelegate.swift in Sources */,
-				630DA680236CDF440066DDE6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -285,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SKRU67QKG5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RMRSpbPortal/Info.plist;
@@ -305,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SKRU67QKG5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RMRSpbPortal/Info.plist;
