@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "630DA677236CDF440066DDE6"
-               BuildableName = "RMRSpbPortal.app"
+               BuildableName = "RMRSpb.app"
                BlueprintName = "RMRSpbPortal"
                ReferencedContainer = "container:RMRSpbPortal.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "630DA677236CDF440066DDE6"
-            BuildableName = "RMRSpbPortal.app"
+            BuildableName = "RMRSpb.app"
             BlueprintName = "RMRSpbPortal"
             ReferencedContainer = "container:RMRSpbPortal.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "630DA677236CDF440066DDE6"
-            BuildableName = "RMRSpbPortal.app"
+            BuildableName = "RMRSpb.app"
             BlueprintName = "RMRSpbPortal"
             ReferencedContainer = "container:RMRSpbPortal.xcodeproj">
          </BuildableReference>
