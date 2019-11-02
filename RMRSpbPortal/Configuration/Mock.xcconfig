@@ -1,0 +1,3 @@
+PRODUCT_NAME = RMRSpb Mock
+PRODUCT_BUNDLE_IDENTIFIER = com.redmadrobot.sbpportal.dev
+CODE_SIGN_ENTITLEMENTS = Configuration/Mock.entitlements
