@@ -111,12 +111,12 @@
 		630DA69C236DF0540066DDE6 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				630DA6A0236DF0FD0066DDE6 /* Prod.xcconfig */,
+				630DA6A3236DF2180066DDE6 /* Prod.entitlements */,
 				630DA69E236DF0C10066DDE6 /* Dev.xcconfig */,
 				630DA6A1236DF1E50066DDE6 /* Dev.entitlements */,
 				630DA69F236DF0EC0066DDE6 /* Mock.xcconfig */,
 				630DA6A2236DF2040066DDE6 /* Mock.entitlements */,
-				630DA6A0236DF0FD0066DDE6 /* Prod.xcconfig */,
-				630DA6A3236DF2180066DDE6 /* Prod.entitlements */,
 				630DA6AA236DF6080066DDE6 /* ConfigurationParameters.swift */,
 			);
 			path = Configuration;

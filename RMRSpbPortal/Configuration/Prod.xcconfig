@@ -1,3 +1,4 @@
 PRODUCT_NAME = RMRSpb
 PRODUCT_BUNDLE_IDENTIFIER = com.redmadrobot.sbpportal
 CODE_SIGN_ENTITLEMENTS = Configuration/Prod.entitlements
+ENDPOINT =
