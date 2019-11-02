@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Legacy",
+        "repositoryURL": "https://github.com/eugeneego/legacy",
+        "state": {
+          "branch": null,
+          "revision": "7d25577feeffaac536056b09eb9a6447d8f30063",
+          "version": "7.0.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

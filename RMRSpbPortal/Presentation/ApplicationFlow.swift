@@ -6,9 +6,12 @@
 //  Copyright © 2019 RedMadRobot. All rights reserved.
 //
 
+import Legacy
 import UIKit
 
-class ApplicationFlow {
+class ApplicationFlow: DependencyInjectionContainerDependency {
+    var container: DependencyInjectionContainer!
+
     private let window: UIWindow
 
     init(window: UIWindow) {
@@ -18,6 +21,7 @@ class ApplicationFlow {
     func start() {
         window.makeKeyAndVisible()
         let mainMenuFlow = MainMenuFlow()
+        container.resolve(mainMenuFlow)
         setRootViewController(mainMenuFlow.start())
     }
 

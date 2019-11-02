@@ -1,4 +1,5 @@
 PRODUCT_NAME = RMRSpb Dev
 PRODUCT_BUNDLE_IDENTIFIER = com.redmadrobot.sbpportal.dev
-CODE_SIGN_ENTITLEMENTS = Configuration/Dev.entitlements
+CODE_SIGN_ENTITLEMENTS = RMRSpbPortal/Configuration/Dev.entitlements
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV
 ENDPOINT =

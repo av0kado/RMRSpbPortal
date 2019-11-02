@@ -6,9 +6,12 @@
 //  Copyright © 2019 RedMadRobot. All rights reserved.
 //
 
+import Legacy
 import UIKit
 
-class MainMenuFlow {
+class MainMenuFlow: DependencyInjectionContainerDependency {
+    var container: DependencyInjectionContainer!
+
     func start() -> UIViewController {
         return redViewController()
     }
