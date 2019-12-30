@@ -10,7 +10,7 @@ import Legacy
 import UIKit
 
 class ApplicationFlow: DependencyInjectionContainerDependency {
-    var container: DependencyInjectionContainer!
+    var container: DependencyInjectionContainer?
 
     private let window: UIWindow
 
@@ -21,7 +21,7 @@ class ApplicationFlow: DependencyInjectionContainerDependency {
     func start() {
         window.makeKeyAndVisible()
         let mainMenuFlow = MainMenuFlow()
-        container.resolve(mainMenuFlow)
+        container?.resolve(mainMenuFlow)
         setRootViewController(mainMenuFlow.start())
     }
 

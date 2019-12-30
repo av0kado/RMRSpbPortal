@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE050B23BA462E00DBD772 /* Legacy.framework */; };
+		23FE051523BA477800DBD772 /* DependencyInjectionContainerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE051423BA477800DBD772 /* DependencyInjectionContainerDependency.swift */; };
+		23FE051723BA479C00DBD772 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE051623BA479C00DBD772 /* Configurator.swift */; };
 		630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67B236CDF440066DDE6 /* AppDelegate.swift */; };
 		630DA693236CE52D0066DDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA681236CDF450066DDE6 /* Assets.xcassets */; };
 		630DA694236CE52E0066DDE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630DA686236CDF450066DDE6 /* LaunchScreen.storyboard */; };
@@ -14,17 +17,17 @@
 		630DA698236CE6770066DDE6 /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA697236CE6770066DDE6 /* ApplicationFlow.swift */; };
 		630DA69B236CE93F0066DDE6 /* MainMenuFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA69A236CE93F0066DDE6 /* MainMenuFlow.swift */; };
 		630DA6AB236DF6080066DDE6 /* ConfigurationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6AA236DF6080066DDE6 /* ConfigurationParameters.swift */; };
-		630DA6B0236DF9D30066DDE6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6AF236DF9D30066DDE6 /* Dependencies.swift */; };
-		630DA6B2236DF9E30066DDE6 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6B1236DF9E30066DDE6 /* Configurator.swift */; };
-		630DA6B5236DFBB80066DDE6 /* Legacy in Frameworks */ = {isa = PBXBuildFile; productRef = 630DA6B4236DFBB80066DDE6 /* Legacy */; };
 		630DA6B9236DFF990066DDE6 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6B8236DFF990066DDE6 /* SettingsService.swift */; };
 		630DA6BB236DFFBA0066DDE6 /* UserDefaultsSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6BA236DFFB90066DDE6 /* UserDefaultsSettingsService.swift */; };
-		630DA6BD236E00650066DDE6 /* ContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6BC236E00650066DDE6 /* ContainerBuilder.swift */; };
-		630DA6BF236E01490066DDE6 /* MockConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6BE236E01490066DDE6 /* MockConfigurator.swift */; };
-		630DA6C1236E02190066DDE6 /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6C0236E02190066DDE6 /* NetworkConfigurator.swift */; };
+		C39C75016A1CD430527A5641 /* ContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3965BC88E4BDC8106ADCC9F /* ContainerBuilder.swift */; };
+		C39D2F10520F932608008600 /* MockConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39F85070A16A75997619921 /* MockConfigurator.swift */; };
+		C39EED7BE18CBF5D6120A515 /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39EB04F9A09BD25AFBBF6C5 /* NetworkConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23FE050B23BA462E00DBD772 /* Legacy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Legacy.framework; path = Carthage/Build/iOS/Legacy.framework; sourceTree = "<group>"; };
+		23FE051423BA477800DBD772 /* DependencyInjectionContainerDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainerDependency.swift; sourceTree = "<group>"; };
+		23FE051623BA479C00DBD772 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		630DA678236CDF440066DDE6 /* RMRSpb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMRSpb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630DA67B236CDF440066DDE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		630DA681236CDF450066DDE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,13 +43,11 @@
 		630DA6A2236DF2040066DDE6 /* Mock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mock.entitlements; sourceTree = "<group>"; };
 		630DA6A3236DF2180066DDE6 /* Prod.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prod.entitlements; sourceTree = "<group>"; };
 		630DA6AA236DF6080066DDE6 /* ConfigurationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationParameters.swift; sourceTree = "<group>"; };
-		630DA6AF236DF9D30066DDE6 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
-		630DA6B1236DF9E30066DDE6 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		630DA6B8236DFF990066DDE6 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		630DA6BA236DFFB90066DDE6 /* UserDefaultsSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsService.swift; sourceTree = "<group>"; };
-		630DA6BC236E00650066DDE6 /* ContainerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerBuilder.swift; sourceTree = "<group>"; };
-		630DA6BE236E01490066DDE6 /* MockConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockConfigurator.swift; sourceTree = "<group>"; };
-		630DA6C0236E02190066DDE6 /* NetworkConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
+		C3965BC88E4BDC8106ADCC9F /* ContainerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerBuilder.swift; sourceTree = "<group>"; };
+		C39EB04F9A09BD25AFBBF6C5 /* NetworkConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
+		C39F85070A16A75997619921 /* MockConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,18 +55,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630DA6B5236DFBB80066DDE6 /* Legacy in Frameworks */,
+				23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23FE050A23BA462E00DBD772 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23FE050B23BA462E00DBD772 /* Legacy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23FE050F23BA467100DBD772 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				23FE051423BA477800DBD772 /* DependencyInjectionContainerDependency.swift */,
+				23FE051623BA479C00DBD772 /* Configurator.swift */,
+				C39F85070A16A75997619921 /* MockConfigurator.swift */,
+				C39EB04F9A09BD25AFBBF6C5 /* NetworkConfigurator.swift */,
+				C3965BC88E4BDC8106ADCC9F /* ContainerBuilder.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		630DA66F236CDF440066DDE6 = {
 			isa = PBXGroup;
 			children = (
 				630DA67A236CDF440066DDE6 /* RMRSpbPortal */,
 				630DA679236CDF440066DDE6 /* Products */,
+				23FE050A23BA462E00DBD772 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,8 +107,8 @@
 				630DA69C236DF0540066DDE6 /* Configuration */,
 				630DA696236CE5D80066DDE6 /* Presentation */,
 				630DA6AD236DF7FF0066DDE6 /* Services */,
-				630DA6AE236DF8120066DDE6 /* Dependencies */,
 				630DA68F236CE3D50066DDE6 /* Resources */,
+				23FE050F23BA467100DBD772 /* Dependencies */,
 			);
 			path = RMRSpbPortal;
 			sourceTree = "<group>";
@@ -148,18 +170,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		630DA6AE236DF8120066DDE6 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				630DA6AF236DF9D30066DDE6 /* Dependencies.swift */,
-				630DA6BC236E00650066DDE6 /* ContainerBuilder.swift */,
-				630DA6B1236DF9E30066DDE6 /* Configurator.swift */,
-				630DA6BE236E01490066DDE6 /* MockConfigurator.swift */,
-				630DA6C0236E02190066DDE6 /* NetworkConfigurator.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		630DA6B7236DFF8B0066DDE6 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 				630DA674236CDF440066DDE6 /* Sources */,
 				630DA675236CDF440066DDE6 /* Frameworks */,
 				630DA676236CDF440066DDE6 /* Resources */,
+				23FE050923BA444D00DBD772 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -187,7 +198,6 @@
 			);
 			name = RMRSpbPortal;
 			packageProductDependencies = (
-				630DA6B4236DFBB80066DDE6 /* Legacy */,
 			);
 			productName = RMRSpbPortal;
 			productReference = 630DA678236CDF440066DDE6 /* RMRSpb.app */;
@@ -218,7 +228,6 @@
 			);
 			mainGroup = 630DA66F236CDF440066DDE6;
 			packageReferences = (
-				630DA6B3236DFBB80066DDE6 /* XCRemoteSwiftPackageReference "legacy" */,
 			);
 			productRefGroup = 630DA679236CDF440066DDE6 /* Products */;
 			projectDirPath = "";
@@ -243,6 +252,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23FE050923BA444D00DBD772 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Legacy.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Legacy.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		630DA6B6236DFEF90066DDE6 /* Fix Swift Package Manager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,17 +297,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FE051723BA479C00DBD772 /* Configurator.swift in Sources */,
 				630DA6AB236DF6080066DDE6 /* ConfigurationParameters.swift in Sources */,
-				630DA6BD236E00650066DDE6 /* ContainerBuilder.swift in Sources */,
 				630DA698236CE6770066DDE6 /* ApplicationFlow.swift in Sources */,
 				630DA69B236CE93F0066DDE6 /* MainMenuFlow.swift in Sources */,
-				630DA6BF236E01490066DDE6 /* MockConfigurator.swift in Sources */,
-				630DA6C1236E02190066DDE6 /* NetworkConfigurator.swift in Sources */,
-				630DA6B0236DF9D30066DDE6 /* Dependencies.swift in Sources */,
-				630DA6B2236DF9E30066DDE6 /* Configurator.swift in Sources */,
 				630DA6B9236DFF990066DDE6 /* SettingsService.swift in Sources */,
 				630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */,
 				630DA6BB236DFFBA0066DDE6 /* UserDefaultsSettingsService.swift in Sources */,
+				23FE051523BA477800DBD772 /* DependencyInjectionContainerDependency.swift in Sources */,
+				C39D2F10520F932608008600 /* MockConfigurator.swift in Sources */,
+				C39EED7BE18CBF5D6120A515 /* NetworkConfigurator.swift in Sources */,
+				C39C75016A1CD430527A5641 /* ContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +389,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SKRU67QKG5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RMRSpbPortal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,6 +468,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SKRU67QKG5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RMRSpbPortal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -510,6 +547,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RMRSpbPortal/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SKRU67QKG5;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RMRSpbPortal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,25 +586,6 @@
 			defaultConfigurationName = Prod;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		630DA6B3236DFBB80066DDE6 /* XCRemoteSwiftPackageReference "legacy" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/eugeneego/legacy";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		630DA6B4236DFBB80066DDE6 /* Legacy */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 630DA6B3236DFBB80066DDE6 /* XCRemoteSwiftPackageReference "legacy" */;
-			productName = Legacy;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 630DA670236CDF440066DDE6 /* Project object */;
 }

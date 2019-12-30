@@ -11,7 +11,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, DependencyInjectionContainerDependency {
-    var container: DependencyInjectionContainer!
+    var container: DependencyInjectionContainer?
 
     private var applicationFlow: ApplicationFlow!
 
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DependencyInjectionContai
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         applicationFlow = ApplicationFlow(window: window)
-        container.resolve(applicationFlow)
+        container?.resolve(applicationFlow)
         applicationFlow.start()
         return true
     }

@@ -1,0 +1,11 @@
+framework module Legacy {
+  umbrella header "Legacy.h"
+
+  export *
+  module * { export * }
+}
+
+module Legacy.Swift {
+    header "Legacy-Swift.h"
+    requires objc
+}

@@ -10,7 +10,7 @@ import Legacy
 import UIKit
 
 class MainMenuFlow: DependencyInjectionContainerDependency {
-    var container: DependencyInjectionContainer!
+    var container: DependencyInjectionContainer?
 
     func start() -> UIViewController {
         return redViewController()
