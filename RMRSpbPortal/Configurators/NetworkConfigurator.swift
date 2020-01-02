@@ -16,11 +16,6 @@ class NetworkConfigurator: Configurator {
     }
 
     func build() -> DependencyInjectionContainer {
-        let container = Odin()
-        let settingsService = { () -> SettingService in
-            UserDefaultsSettingsService(userDefaults: .standard)
-        }
-        let builder = ContainerBuilder(container: container, settingsService: settingsService)
-        return builder.container
+        fatalError("\(#file) not implemented.")
     }
 }

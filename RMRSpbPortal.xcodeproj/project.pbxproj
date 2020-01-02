@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE050B23BA462E00DBD772 /* Legacy.framework */; };
-		23FE051523BA477800DBD772 /* DependencyInjectionContainerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE051423BA477800DBD772 /* DependencyInjectionContainerDependency.swift */; };
-		23FE051723BA479C00DBD772 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE051623BA479C00DBD772 /* Configurator.swift */; };
 		630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67B236CDF440066DDE6 /* AppDelegate.swift */; };
 		630DA693236CE52D0066DDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA681236CDF450066DDE6 /* Assets.xcassets */; };
 		630DA694236CE52E0066DDE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630DA686236CDF450066DDE6 /* LaunchScreen.storyboard */; };
@@ -19,15 +17,21 @@
 		630DA6AB236DF6080066DDE6 /* ConfigurationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6AA236DF6080066DDE6 /* ConfigurationParameters.swift */; };
 		630DA6B9236DFF990066DDE6 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6B8236DFF990066DDE6 /* SettingsService.swift */; };
 		630DA6BB236DFFBA0066DDE6 /* UserDefaultsSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6BA236DFFB90066DDE6 /* UserDefaultsSettingsService.swift */; };
-		C39C75016A1CD430527A5641 /* ContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3965BC88E4BDC8106ADCC9F /* ContainerBuilder.swift */; };
-		C39D2F10520F932608008600 /* MockConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39F85070A16A75997619921 /* MockConfigurator.swift */; };
-		C39EED7BE18CBF5D6120A515 /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39EB04F9A09BD25AFBBF6C5 /* NetworkConfigurator.swift */; };
+		C394B85F5B6496733CB15C96 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39432C2F328C31CBBEBB7AD /* Project.swift */; };
+		C394D13D29731ED47FD3D1DC /* NetworkConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39D600D7586A6ADDCC8F96C /* NetworkConfigurator.swift */; };
+		C395642B218DDD55ADC758C0 /* DependencyInjectionContainerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392314056F3927CEB8B0A83 /* DependencyInjectionContainerDependency.swift */; };
+		C395A7A531EC7CB168C005AA /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3926B64B45705D7781FAE15 /* Device.swift */; };
+		C395C7E485D67E03FD418763 /* ProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390ED793ADBE54E0ED4D24A /* ProjectsService.swift */; };
+		C397295EC63DC85555B3FDE2 /* ContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C393F9062073C0BCF3785D97 /* ContainerBuilder.swift */; };
+		C39729E3E1AF04A6E0ECB58F /* DevicesManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C398E98E5058BFFE6060FF81 /* DevicesManagementService.swift */; };
+		C39785F597431B68A0FB71A7 /* MockConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390546F9271ADB5CC31F98C /* MockConfigurator.swift */; };
+		C3988DF92D1690FC87A0C8E3 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392390A93AA14380B18AF7D /* Configurator.swift */; };
+		C39A27DE28FF605044B4A0EA /* MockDevicesManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3937967B99EB22CF82C6B5E /* MockDevicesManagementService.swift */; };
+		C39BD4EA8DEE300EA45D065F /* SettingsServiceDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BAA4424822163D239E575 /* SettingsServiceDependency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23FE050B23BA462E00DBD772 /* Legacy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Legacy.framework; path = Carthage/Build/iOS/Legacy.framework; sourceTree = "<group>"; };
-		23FE051423BA477800DBD772 /* DependencyInjectionContainerDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainerDependency.swift; sourceTree = "<group>"; };
-		23FE051623BA479C00DBD772 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		630DA678236CDF440066DDE6 /* RMRSpb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMRSpb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630DA67B236CDF440066DDE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		630DA681236CDF450066DDE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,9 +49,17 @@
 		630DA6AA236DF6080066DDE6 /* ConfigurationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationParameters.swift; sourceTree = "<group>"; };
 		630DA6B8236DFF990066DDE6 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		630DA6BA236DFFB90066DDE6 /* UserDefaultsSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsService.swift; sourceTree = "<group>"; };
-		C3965BC88E4BDC8106ADCC9F /* ContainerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerBuilder.swift; sourceTree = "<group>"; };
-		C39EB04F9A09BD25AFBBF6C5 /* NetworkConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
-		C39F85070A16A75997619921 /* MockConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockConfigurator.swift; sourceTree = "<group>"; };
+		C390546F9271ADB5CC31F98C /* MockConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockConfigurator.swift; sourceTree = "<group>"; };
+		C390ED793ADBE54E0ED4D24A /* ProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
+		C392314056F3927CEB8B0A83 /* DependencyInjectionContainerDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainerDependency.swift; sourceTree = "<group>"; };
+		C392390A93AA14380B18AF7D /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		C3926B64B45705D7781FAE15 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C3937967B99EB22CF82C6B5E /* MockDevicesManagementService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDevicesManagementService.swift; sourceTree = "<group>"; };
+		C393F9062073C0BCF3785D97 /* ContainerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerBuilder.swift; sourceTree = "<group>"; };
+		C39432C2F328C31CBBEBB7AD /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		C398E98E5058BFFE6060FF81 /* DevicesManagementService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesManagementService.swift; sourceTree = "<group>"; };
+		C39BAA4424822163D239E575 /* SettingsServiceDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsServiceDependency.swift; sourceTree = "<group>"; };
+		C39D600D7586A6ADDCC8F96C /* NetworkConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +85,8 @@
 		23FE050F23BA467100DBD772 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				23FE051423BA477800DBD772 /* DependencyInjectionContainerDependency.swift */,
-				23FE051623BA479C00DBD772 /* Configurator.swift */,
-				C39F85070A16A75997619921 /* MockConfigurator.swift */,
-				C39EB04F9A09BD25AFBBF6C5 /* NetworkConfigurator.swift */,
-				C3965BC88E4BDC8106ADCC9F /* ContainerBuilder.swift */,
+				C392314056F3927CEB8B0A83 /* DependencyInjectionContainerDependency.swift */,
+				C39BAA4424822163D239E575 /* SettingsServiceDependency.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 				630DA6AD236DF7FF0066DDE6 /* Services */,
 				630DA68F236CE3D50066DDE6 /* Resources */,
 				23FE050F23BA467100DBD772 /* Dependencies */,
+				C395EF56C348C93154258644 /* Configurators */,
 			);
 			path = RMRSpbPortal;
 			sourceTree = "<group>";
@@ -166,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				630DA6B7236DFF8B0066DDE6 /* Settings */,
+				C3999A5B304BFD4882A3A7DC /* DevicesManagement */,
+				C3968F68DE582A1F56249504 /* Projects */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,6 +189,52 @@
 				630DA6BA236DFFB90066DDE6 /* UserDefaultsSettingsService.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		C392A94BC38D232C9C17BBE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3926B64B45705D7781FAE15 /* Device.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C39481D8B285826740156DD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C39432C2F328C31CBBEBB7AD /* Project.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C395EF56C348C93154258644 /* Configurators */ = {
+			isa = PBXGroup;
+			children = (
+				C39D600D7586A6ADDCC8F96C /* NetworkConfigurator.swift */,
+				C390546F9271ADB5CC31F98C /* MockConfigurator.swift */,
+				C392390A93AA14380B18AF7D /* Configurator.swift */,
+				C393F9062073C0BCF3785D97 /* ContainerBuilder.swift */,
+			);
+			path = Configurators;
+			sourceTree = "<group>";
+		};
+		C3968F68DE582A1F56249504 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				C390ED793ADBE54E0ED4D24A /* ProjectsService.swift */,
+				C39481D8B285826740156DD4 /* Models */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		C3999A5B304BFD4882A3A7DC /* DevicesManagement */ = {
+			isa = PBXGroup;
+			children = (
+				C398E98E5058BFFE6060FF81 /* DevicesManagementService.swift */,
+				C392A94BC38D232C9C17BBE1 /* Models */,
+				C3937967B99EB22CF82C6B5E /* MockDevicesManagementService.swift */,
+			);
+			path = DevicesManagement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,17 +355,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23FE051723BA479C00DBD772 /* Configurator.swift in Sources */,
 				630DA6AB236DF6080066DDE6 /* ConfigurationParameters.swift in Sources */,
 				630DA698236CE6770066DDE6 /* ApplicationFlow.swift in Sources */,
 				630DA69B236CE93F0066DDE6 /* MainMenuFlow.swift in Sources */,
 				630DA6B9236DFF990066DDE6 /* SettingsService.swift in Sources */,
 				630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */,
 				630DA6BB236DFFBA0066DDE6 /* UserDefaultsSettingsService.swift in Sources */,
-				23FE051523BA477800DBD772 /* DependencyInjectionContainerDependency.swift in Sources */,
-				C39D2F10520F932608008600 /* MockConfigurator.swift in Sources */,
-				C39EED7BE18CBF5D6120A515 /* NetworkConfigurator.swift in Sources */,
-				C39C75016A1CD430527A5641 /* ContainerBuilder.swift in Sources */,
+				C39729E3E1AF04A6E0ECB58F /* DevicesManagementService.swift in Sources */,
+				C395A7A531EC7CB168C005AA /* Device.swift in Sources */,
+				C39A27DE28FF605044B4A0EA /* MockDevicesManagementService.swift in Sources */,
+				C394D13D29731ED47FD3D1DC /* NetworkConfigurator.swift in Sources */,
+				C39785F597431B68A0FB71A7 /* MockConfigurator.swift in Sources */,
+				C3988DF92D1690FC87A0C8E3 /* Configurator.swift in Sources */,
+				C397295EC63DC85555B3FDE2 /* ContainerBuilder.swift in Sources */,
+				C395642B218DDD55ADC758C0 /* DependencyInjectionContainerDependency.swift in Sources */,
+				C39BD4EA8DEE300EA45D065F /* SettingsServiceDependency.swift in Sources */,
+				C395C7E485D67E03FD418763 /* ProjectsService.swift in Sources */,
+				C394B85F5B6496733CB15C96 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
