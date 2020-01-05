@@ -13,12 +13,12 @@ class MainMenuFlow: DependencyInjectionContainerDependency {
     var container: DependencyInjectionContainer?
 
     func start() -> UIViewController {
-        return redViewController()
+        return devicesManagementFlow()
     }
 
-    private func redViewController() -> UIViewController {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .red
-        return controller
+    private func devicesManagementFlow() -> UIViewController {
+        let flow = DevicesManagementFlow()
+        container?.resolve(flow)
+        return flow.startViewController()
     }
 }

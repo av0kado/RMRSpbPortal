@@ -41,3 +41,45 @@ struct Device: Hashable {
     /// Projects in which device participates and can be used to deploy and test.
     var projects: [Project]
 }
+
+extension Device.OperatingSystem: Comparable {
+    static func < (lhs: Device.OperatingSystem, rhs: Device.OperatingSystem) -> Bool {
+        switch (lhs, rhs) {
+            case (.iOS(let lhsVersion), .iOS(let rhsVersion)), (.android(let lhsVersion), .android(let rhsVersion)):
+                return smaller(lhs: lhsVersion, rhs: rhsVersion)
+            default:
+                return false
+        }
+    }
+
+    static func == (lhs: Device.OperatingSystem, rhs: Device.OperatingSystem) -> Bool {
+        switch (lhs, rhs) {
+            case (.iOS(let lhsVersion), .iOS(let rhsVersion)), (.android(let lhsVersion), .android(let rhsVersion)):
+                return equal(lhs: lhsVersion, rhs: rhsVersion)
+            default:
+                return false
+        }
+    }
+
+    private static func smaller(lhs: String, rhs: String) -> Bool {
+        let (lhsComponents, rhsComponents) = components(lhs: lhs, rhs: rhs)
+        return zip(lhsComponents, rhsComponents).first(where: { $0 < $1 }) != nil ? true : false
+    }
+
+    private static func equal(lhs: String, rhs: String) -> Bool {
+        let (lhsComponents, rhsComponents) = components(lhs: lhs, rhs: rhs)
+        return zip(lhsComponents, rhsComponents).first(where: { $0 != $1 }) != nil ? true : false
+    }
+
+    private static func components(lhs: String, rhs: String) -> ([Int], [Int]) {
+        var lhsComponents = lhs.components(separatedBy: ".").compactMap { Int($0) }
+        var rhsComponents = rhs.components(separatedBy: ".").compactMap { Int($0) }
+        while lhsComponents.count < rhsComponents.count {
+            lhsComponents.append(0)
+        }
+        while rhsComponents.count < lhsComponents.count {
+            rhsComponents.append(0)
+        }
+        return (lhsComponents, rhsComponents)
+    }
+}

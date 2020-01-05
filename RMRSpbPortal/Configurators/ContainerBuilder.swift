@@ -23,6 +23,8 @@ struct ContainerBuilder {
         container.register { (object: inout SettingsServiceDependency) in
             object.settingsService = settingsService
         }
+        container.register { settingsService }
+        container.register { devicesManagementService }
         container.register { [unowned container] (object: inout DependencyInjectionContainerDependency) in
             object.container = container
         }
