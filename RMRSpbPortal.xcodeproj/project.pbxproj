@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23EC85CA23C4B38A00A20E88 /* CombineCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EC85C923C4B38A00A20E88 /* CombineCocoa.framework */; };
 		23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE050B23BA462E00DBD772 /* Legacy.framework */; };
 		630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67B236CDF440066DDE6 /* AppDelegate.swift */; };
 		630DA693236CE52D0066DDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA681236CDF450066DDE6 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23EC85C923C4B38A00A20E88 /* CombineCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CombineCocoa.framework; path = Carthage/Build/iOS/CombineCocoa.framework; sourceTree = "<group>"; };
 		23FE050B23BA462E00DBD772 /* Legacy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Legacy.framework; path = Carthage/Build/iOS/Legacy.framework; sourceTree = "<group>"; };
 		630DA678236CDF440066DDE6 /* RMRSpb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMRSpb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630DA67B236CDF440066DDE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23EC85CA23C4B38A00A20E88 /* CombineCocoa.framework in Frameworks */,
 				23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +94,7 @@
 		23FE050A23BA462E00DBD772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23EC85C923C4B38A00A20E88 /* CombineCocoa.framework */,
 				23FE050B23BA462E00DBD772 /* Legacy.framework */,
 			);
 			name = Frameworks;
@@ -356,12 +360,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Legacy.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CombineCocoa.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Legacy.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CombineCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
