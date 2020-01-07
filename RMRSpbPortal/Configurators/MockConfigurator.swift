@@ -12,9 +12,11 @@ class MockConfigurator: Configurator {
     func build() -> DependencyInjectionContainer {
         let settingsService = UserDefaultsSettingsService(userDefaults: .standard)
         let devicesManagementService = MockDevicesManagementService()
+        let projectsService = MockProjectsService()
         let builder = ContainerBuilder(
             settingsService: settingsService,
-            devicesManagementService: devicesManagementService
+            devicesManagementService: devicesManagementService,
+            projectsService: projectsService
         )
         return builder.container
     }

@@ -16,6 +16,7 @@
 		630DA6AB236DF6080066DDE6 /* ConfigurationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6AA236DF6080066DDE6 /* ConfigurationParameters.swift */; };
 		630DA6B9236DFF990066DDE6 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6B8236DFF990066DDE6 /* SettingsService.swift */; };
 		630DA6BB236DFFBA0066DDE6 /* UserDefaultsSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA6BA236DFFB90066DDE6 /* UserDefaultsSettingsService.swift */; };
+		C39022F0478ED933F26507B9 /* MockProjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39FE907C2868ABEC1E881B3 /* MockProjectsService.swift */; };
 		C39074D9C039082BDEB15F8A /* DevicesManagementFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3985B3D0B93D04F7A1E4844 /* DevicesManagementFlow.swift */; };
 		C39190F1B8E14B5510EADC45 /* DevicesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C393C27E89DCDEB5593ED146 /* DevicesListViewModel.swift */; };
 		C39194EB781ABA49A4BA8D76 /* Subject+AnySubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C394E59EF9ED45ADC4B18F65 /* Subject+AnySubscriber.swift */; };
@@ -72,6 +73,7 @@
 		C39BAA4424822163D239E575 /* SettingsServiceDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsServiceDependency.swift; sourceTree = "<group>"; };
 		C39D600D7586A6ADDCC8F96C /* NetworkConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigurator.swift; sourceTree = "<group>"; };
 		C39EED693EF52AD5018D9DC2 /* DevicesListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesListModule.swift; sourceTree = "<group>"; };
+		C39FE907C2868ABEC1E881B3 /* MockProjectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockProjectsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			children = (
 				C390ED793ADBE54E0ED4D24A /* ProjectsService.swift */,
 				C39481D8B285826740156DD4 /* Models */,
+				C39FE907C2868ABEC1E881B3 /* MockProjectsService.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				C3953DD9FF1377D623028A9C /* DevicesListModule.swift in Sources */,
 				C39A3D049ED3D04D3CA2DC42 /* DevicesManagementServiceDependency.swift in Sources */,
 				C39194EB781ABA49A4BA8D76 /* Subject+AnySubscriber.swift in Sources */,
+				C39022F0478ED933F26507B9 /* MockProjectsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

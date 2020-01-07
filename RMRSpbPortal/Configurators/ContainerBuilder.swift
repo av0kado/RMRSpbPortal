@@ -13,18 +13,20 @@ struct ContainerBuilder {
 
     init(
         settingsService: SettingService,
-        devicesManagementService: DevicesManagementService
+        devicesManagementService: DevicesManagementService,
+        projectsService: ProjectsService
     ) {
         let container = Odin()
         self.container = container
         container.register { (object: inout SettingsServiceDependency) in
             object.settingsService = settingsService
         }
-        container.register { (object: inout SettingsServiceDependency) in
-            object.settingsService = settingsService
+        container.register { (object: inout DevicesManagementServiceDependency) in
+            object.devicesManagementService = devicesManagementService
         }
         container.register { settingsService }
         container.register { devicesManagementService }
+        container.register { projectsService }
         container.register { [unowned container] (object: inout DependencyInjectionContainerDependency) in
             object.container = container
         }
