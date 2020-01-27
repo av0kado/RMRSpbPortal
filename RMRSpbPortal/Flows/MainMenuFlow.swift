@@ -10,7 +10,7 @@ import Legacy
 import UIKit
 
 class MainMenuFlow: DependencyInjectionContainerDependency {
-    var container: DependencyInjectionContainer?
+    var container: DependencyInjectionContainer!
 
     func start() -> UIViewController {
         return devicesManagementFlow()
@@ -18,7 +18,7 @@ class MainMenuFlow: DependencyInjectionContainerDependency {
 
     private func devicesManagementFlow() -> UIViewController {
         let flow = DevicesManagementFlow()
-        container?.resolve(flow)
+        container.resolve(flow)
         return flow.startViewController()
     }
 }

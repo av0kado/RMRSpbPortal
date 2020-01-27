@@ -10,14 +10,20 @@ import Legacy
 
 class MockConfigurator: Configurator {
     func build() -> DependencyInjectionContainer {
+        let moduleFactory = DefaultModuleFactory()
         let settingsService = UserDefaultsSettingsService(userDefaults: .standard)
         let devicesManagementService = MockDevicesManagementService()
+        let devicesListSettingsService = InMemoryDevicesListSettingsService()
         let projectsService = MockProjectsService()
         let builder = ContainerBuilder(
+            moduleFactory: moduleFactory,
             settingsService: settingsService,
             devicesManagementService: devicesManagementService,
+            devicesListSettingsService: devicesListSettingsService,
             projectsService: projectsService
         )
-        return builder.container
+        let container = builder.container
+        container.resolve(moduleFactory)
+        return container
     }
 }

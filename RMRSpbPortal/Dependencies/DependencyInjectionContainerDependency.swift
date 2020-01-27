@@ -9,5 +9,5 @@
 import Legacy
 
 protocol DependencyInjectionContainerDependency {
-    var container: DependencyInjectionContainer? { get set }
+    var container: DependencyInjectionContainer! { get set }
 }

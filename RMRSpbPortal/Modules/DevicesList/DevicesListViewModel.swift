@@ -18,49 +18,46 @@ enum DevicesListState {
 
 protocol DevicesListViewModel {
     var devicesListStatePublisher: AnyPublisher<DevicesListState, Never> { get }
-    var loadActionsSubscriber: AnySubscriber<(), Never> { get }
+
+    func reload()
+    func select(device: Device)
 }
 
 class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
     // MARK: - DevicesListModule
 
-    let operatingSystemConstraintsSubscriber: AnySubscriber<Device.OperatingSystem.Constraints?, Never>
-    private let operatingSystemConstraints: CurrentValueSubject<Device.OperatingSystem.Constraints?, Never>
-
-    let projectFilterSubscriber: AnySubscriber<Project?, Never>
-    private let projectFilter: CurrentValueSubject<Project?, Never>
-
-    let loadOnlyAvailableSubscriber: AnySubscriber<Bool, Never>
-    private let loadOnlyAvailable: CurrentValueSubject<Bool, Never>
+    var didSelectDevice: ((Device.ID) -> Void)?
 
     // MARK: - DevicesListViewModel
 
     let devicesListStatePublisher: AnyPublisher<DevicesListState, Never>
 
-    let loadActionsSubscriber: AnySubscriber<(), Never>
     private let loadActions: PassthroughSubject<(), Never>
+
+    func reload() {
+        loadActions.send()
+    }
+
+    func select(device: Device) {
+        didSelectDevice?(device.id)
+    }
 
     // MARK: -
 
     private var cancellables: Set<AnyCancellable> = []
 
-    init(devicesManagementService: DevicesManagementService) {
-        operatingSystemConstraints = CurrentValueSubject(nil)
-        operatingSystemConstraintsSubscriber = operatingSystemConstraints.anySubscriber()
-
-        projectFilter = CurrentValueSubject(nil)
-        projectFilterSubscriber = projectFilter.anySubscriber()
-
-        loadOnlyAvailable = CurrentValueSubject(false)
-        loadOnlyAvailableSubscriber = loadOnlyAvailable.anySubscriber()
-
+    init(devicesManagementService: DevicesManagementService, devicesListSettingsService: DevicesListSettingsService) {
         loadActions = PassthroughSubject()
-        loadActionsSubscriber = loadActions.anySubscriber()
 
         let devicesListState = CurrentValueSubject<DevicesListState, Never>(.loading)
         devicesListStatePublisher = devicesListState.eraseToAnyPublisher()
 
-        loadActions.combineLatest(operatingSystemConstraints, projectFilter, loadOnlyAvailable)
+        loadActions
+            .combineLatest(
+                devicesListSettingsService.osFilter,
+                devicesListSettingsService.projectFilter,
+                devicesListSettingsService.availableOnly
+            )
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { _ in
@@ -69,7 +66,12 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
             )
             .store(in: &cancellables)
 
-        loadActions.combineLatest(operatingSystemConstraints, projectFilter, loadOnlyAvailable)
+        loadActions
+            .combineLatest(
+                devicesListSettingsService.osFilter,
+                devicesListSettingsService.projectFilter,
+                devicesListSettingsService.availableOnly
+            )
             .flatMap {
                 devicesManagementService.loadDevices(with: $1, project: $2, available: $3)
                     .map { .devices($0) }

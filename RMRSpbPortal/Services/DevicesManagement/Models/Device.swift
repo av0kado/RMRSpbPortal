@@ -12,18 +12,29 @@ struct User: Hashable {
     let name: String
 }
 
-struct Device: Hashable {
+struct Device: Hashable, Identifiable {
     /// Device usage status.
-    enum Status: Hashable {
+    enum Status: Hashable, CustomStringConvertible {
         /// Device is on dock and can be taken.
         case onStation
         /// Device is taken by provided user.
         case userTaken(User)
         /// Device is unavailable (e.g. in repair service).
         case unavailable
+
+        var description: String {
+            switch self {
+                case .onStation:
+                    return "On station"
+                case .unavailable:
+                    return "Unavailable"
+                case .userTaken(let user):
+                    return "Taken by \(user.name)"
+            }
+        }
     }
 
-    enum OperatingSystem: Hashable {
+    enum OperatingSystem: Hashable, CustomStringConvertible {
         /// Operating system version.
         ///
         /// Examples: `.iOS("13.3.2")`, `.android("9.0")`
@@ -31,6 +42,15 @@ struct Device: Hashable {
 
         case iOS(Version)
         case android(Version)
+
+        var description: String {
+            switch self {
+                case .iOS(let version):
+                    return "iOS \(version)"
+                case .android(let version):
+                    return "Android \(version)"
+            }
+        }
     }
 
     let id: String

@@ -10,14 +10,19 @@ import UIKit
 import Combine
 import Legacy
 
-class DevicesManagementFlow: DependencyInjectionContainerDependency {
-    var container: DependencyInjectionContainer?
+class DevicesManagementFlow: DependencyInjectionContainerDependency, ModuleFactoryDependency {
+    var container: DependencyInjectionContainer!
+    var moduleFactory: ModuleFactory!
 
     func startViewController() -> UIViewController {
         return UINavigationController(rootViewController: devicesListViewController())
     }
 
     private func devicesListViewController() -> UIViewController {
-        fatalError("Not implemented")
+        var (module, controller) = moduleFactory.devicesList()
+        module.didSelectDevice = {
+            print("Did select device: \($0)")
+        }
+        return controller
     }
 }

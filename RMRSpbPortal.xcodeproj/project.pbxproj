@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23EA60C223DC8EE4009125B6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60C123DC8EE4009125B6 /* LoadingView.swift */; };
+		23EA60C423DC9300009125B6 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60C323DC9300009125B6 /* DeviceCell.swift */; };
+		23EA60C623DDE00F009125B6 /* DevicesListSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60C523DDE00F009125B6 /* DevicesListSettingsService.swift */; };
+		23EA60C823DDE0B3009125B6 /* InMemoryDevicesListSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60C723DDE0B3009125B6 /* InMemoryDevicesListSettingsService.swift */; };
+		23EA60CB23DDEDCC009125B6 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60CA23DDEDCC009125B6 /* ModuleFactory.swift */; };
+		23EA60CD23DDEE38009125B6 /* ModuleFactoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60CC23DDEE38009125B6 /* ModuleFactoryDependency.swift */; };
+		23EA60CF23DDEEB6009125B6 /* DefaultModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60CE23DDEEB6009125B6 /* DefaultModuleFactory.swift */; };
 		23EC85CA23C4B38A00A20E88 /* CombineCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EC85C923C4B38A00A20E88 /* CombineCocoa.framework */; };
+		23EC85CF23C4B4BC00A20E88 /* DevicesListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EC85CE23C4B4BC00A20E88 /* DevicesListErrorView.swift */; };
+		23EC85D123C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EC85D023C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift */; };
 		23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE050B23BA462E00DBD772 /* Legacy.framework */; };
 		630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67B236CDF440066DDE6 /* AppDelegate.swift */; };
 		630DA693236CE52D0066DDE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630DA681236CDF450066DDE6 /* Assets.xcassets */; };
@@ -39,7 +48,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23EA60C123DC8EE4009125B6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		23EA60C323DC9300009125B6 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		23EA60C523DDE00F009125B6 /* DevicesListSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListSettingsService.swift; sourceTree = "<group>"; };
+		23EA60C723DDE0B3009125B6 /* InMemoryDevicesListSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDevicesListSettingsService.swift; sourceTree = "<group>"; };
+		23EA60CA23DDEDCC009125B6 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		23EA60CC23DDEE38009125B6 /* ModuleFactoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryDependency.swift; sourceTree = "<group>"; };
+		23EA60CE23DDEEB6009125B6 /* DefaultModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModuleFactory.swift; sourceTree = "<group>"; };
 		23EC85C923C4B38A00A20E88 /* CombineCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CombineCocoa.framework; path = Carthage/Build/iOS/CombineCocoa.framework; sourceTree = "<group>"; };
+		23EC85CE23C4B4BC00A20E88 /* DevicesListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListErrorView.swift; sourceTree = "<group>"; };
+		23EC85D023C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		23FE050B23BA462E00DBD772 /* Legacy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Legacy.framework; path = Carthage/Build/iOS/Legacy.framework; sourceTree = "<group>"; };
 		630DA678236CDF440066DDE6 /* RMRSpb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RMRSpb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630DA67B236CDF440066DDE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +109,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23EA60C023DC8ED7009125B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23EA60C123DC8EE4009125B6 /* LoadingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23EA60C923DDEDBB009125B6 /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				23EA60CA23DDEDCC009125B6 /* ModuleFactory.swift */,
+				23EA60CE23DDEEB6009125B6 /* DefaultModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		23EC85CD23C4B49D00A20E88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23EC85CE23C4B4BC00A20E88 /* DevicesListErrorView.swift */,
+				23EA60C323DC9300009125B6 /* DeviceCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		23FE050A23BA462E00DBD772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +150,7 @@
 				C392314056F3927CEB8B0A83 /* DependencyInjectionContainerDependency.swift */,
 				C39BAA4424822163D239E575 /* SettingsServiceDependency.swift */,
 				C39B05B9C52B6E851897F1A1 /* DevicesManagementServiceDependency.swift */,
+				23EA60CC23DDEE38009125B6 /* ModuleFactoryDependency.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -245,6 +290,7 @@
 		C398F1EA966C93636ABFC3C4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				23EA60C923DDEDBB009125B6 /* ModuleFactory */,
 				C39A901464795996457F57BF /* DevicesList */,
 			);
 			path = Modules;
@@ -254,8 +300,10 @@
 			isa = PBXGroup;
 			children = (
 				C398E98E5058BFFE6060FF81 /* DevicesManagementService.swift */,
+				23EA60C523DDE00F009125B6 /* DevicesListSettingsService.swift */,
 				C392A94BC38D232C9C17BBE1 /* Models */,
 				C3937967B99EB22CF82C6B5E /* MockDevicesManagementService.swift */,
+				23EA60C723DDE0B3009125B6 /* InMemoryDevicesListSettingsService.swift */,
 			);
 			path = DevicesManagement;
 			sourceTree = "<group>";
@@ -263,6 +311,7 @@
 		C39A901464795996457F57BF /* DevicesList */ = {
 			isa = PBXGroup;
 			children = (
+				23EC85CD23C4B49D00A20E88 /* Views */,
 				C3962CB781240A67DF011B9F /* DevicesListViewController.swift */,
 				C393C27E89DCDEB5593ED146 /* DevicesListViewModel.swift */,
 				C39EED693EF52AD5018D9DC2 /* DevicesListModule.swift */,
@@ -273,7 +322,9 @@
 		C39D7CB162CB9DC5A06E05CA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				23EA60C023DC8ED7009125B6 /* Views */,
 				C394E59EF9ED45ADC4B18F65 /* Subject+AnySubscriber.swift */,
+				23EC85D023C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -401,25 +452,34 @@
 				630DA6AB236DF6080066DDE6 /* ConfigurationParameters.swift in Sources */,
 				630DA698236CE6770066DDE6 /* ApplicationFlow.swift in Sources */,
 				630DA6B9236DFF990066DDE6 /* SettingsService.swift in Sources */,
+				23EA60C423DC9300009125B6 /* DeviceCell.swift in Sources */,
 				630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */,
 				630DA6BB236DFFBA0066DDE6 /* UserDefaultsSettingsService.swift in Sources */,
 				C39729E3E1AF04A6E0ECB58F /* DevicesManagementService.swift in Sources */,
 				C395A7A531EC7CB168C005AA /* Device.swift in Sources */,
 				C39A27DE28FF605044B4A0EA /* MockDevicesManagementService.swift in Sources */,
+				23EA60C223DC8EE4009125B6 /* LoadingView.swift in Sources */,
+				23EA60C823DDE0B3009125B6 /* InMemoryDevicesListSettingsService.swift in Sources */,
 				C394D13D29731ED47FD3D1DC /* NetworkConfigurator.swift in Sources */,
 				C39785F597431B68A0FB71A7 /* MockConfigurator.swift in Sources */,
 				C3988DF92D1690FC87A0C8E3 /* Configurator.swift in Sources */,
+				23EA60CB23DDEDCC009125B6 /* ModuleFactory.swift in Sources */,
 				C397295EC63DC85555B3FDE2 /* ContainerBuilder.swift in Sources */,
 				C395642B218DDD55ADC758C0 /* DependencyInjectionContainerDependency.swift in Sources */,
 				C39BD4EA8DEE300EA45D065F /* SettingsServiceDependency.swift in Sources */,
 				C395C7E485D67E03FD418763 /* ProjectsService.swift in Sources */,
 				C394B85F5B6496733CB15C96 /* Project.swift in Sources */,
+				23EA60C623DDE00F009125B6 /* DevicesListSettingsService.swift in Sources */,
+				23EA60CD23DDEE38009125B6 /* ModuleFactoryDependency.swift in Sources */,
 				C39074D9C039082BDEB15F8A /* DevicesManagementFlow.swift in Sources */,
 				C39E304D8207A321794B28EC /* MainMenuFlow.swift in Sources */,
+				23EC85D123C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift in Sources */,
 				C39EF2C56997D8B225D053CB /* DevicesListViewController.swift in Sources */,
+				23EC85CF23C4B4BC00A20E88 /* DevicesListErrorView.swift in Sources */,
 				C39190F1B8E14B5510EADC45 /* DevicesListViewModel.swift in Sources */,
 				C3953DD9FF1377D623028A9C /* DevicesListModule.swift in Sources */,
 				C39A3D049ED3D04D3CA2DC42 /* DevicesManagementServiceDependency.swift in Sources */,
+				23EA60CF23DDEEB6009125B6 /* DefaultModuleFactory.swift in Sources */,
 				C39194EB781ABA49A4BA8D76 /* Subject+AnySubscriber.swift in Sources */,
 				C39022F0478ED933F26507B9 /* MockProjectsService.swift in Sources */,
 			);

@@ -9,7 +9,5 @@
 import Combine
 
 protocol DevicesListModule {
-    var operatingSystemConstraintsSubscriber: AnySubscriber<Device.OperatingSystem.Constraints?, Never> { get }
-    var projectFilterSubscriber: AnySubscriber<Project?, Never> { get }
-    var loadOnlyAvailableSubscriber: AnySubscriber<Bool, Never> { get }
+    var didSelectDevice: ((Device.ID) -> Void)? { get set }
 }
