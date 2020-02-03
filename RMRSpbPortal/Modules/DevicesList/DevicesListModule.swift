@@ -6,8 +6,6 @@
 // Copyright (c) 2020 RedMadRobot. All rights reserved.
 //
 
-import Combine
-
 protocol DevicesListModule {
     var didSelectDevice: ((Device.ID) -> Void)? { get set }
 }

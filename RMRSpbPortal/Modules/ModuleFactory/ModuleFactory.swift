@@ -10,4 +10,5 @@ import UIKit
 
 protocol ModuleFactory {
     func devicesList() -> (DevicesListModule, UIViewController)
+    func deviceDetails() -> (DeviceDetailsModule, UIViewController)
 }

@@ -27,8 +27,12 @@ protocol DevicesManagementService {
         project: Project?,
         available: Bool
     ) -> Future<[Device], Error>
-    func device(withId id: String) -> Future<Device, Error>
+    func device(with id: Device.ID) -> Future<Device, Error>
     func update(device: Device) -> Future<(), Error>
+    /// Sends device updates. Sends events when a device was updated with `update(device:)`.
+    ///
+    /// - Parameter deviceId: If not nil sends updates only for the device with specified ID.
+    func deviceUpdates(deviceId: Device.ID?) -> AnyPublisher<Device, Never>
 }
 
 extension Device.OperatingSystem {

@@ -6,9 +6,7 @@
 // Copyright (c) 2020 RedMadRobot. All rights reserved.
 //
 
-import UIKit
 import Combine
-import Legacy
 
 enum DevicesListState {
     case loading
@@ -24,6 +22,7 @@ protocol DevicesListViewModel {
 }
 
 class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
+
     // MARK: - DevicesListModule
 
     var didSelectDevice: ((Device.ID) -> Void)?
@@ -31,8 +30,6 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
     // MARK: - DevicesListViewModel
 
     let devicesListStatePublisher: AnyPublisher<DevicesListState, Never>
-
-    private let loadActions: PassthroughSubject<(), Never>
 
     func reload() {
         loadActions.send()
@@ -44,6 +41,7 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
 
     // MARK: -
 
+    private let loadActions: PassthroughSubject<(), Never>
     private var cancellables: Set<AnyCancellable> = []
 
     init(devicesManagementService: DevicesManagementService, devicesListSettingsService: DevicesListSettingsService) {
@@ -52,35 +50,32 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
         let devicesListState = CurrentValueSubject<DevicesListState, Never>(.loading)
         devicesListStatePublisher = devicesListState.eraseToAnyPublisher()
 
-        loadActions
+        let combined = loadActions
             .combineLatest(
                 devicesListSettingsService.osFilter,
                 devicesListSettingsService.projectFilter,
                 devicesListSettingsService.availableOnly
             )
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { _ in
-                    devicesListState.value = .loading
-                }
-            )
+            .map { ($1, $2, $3) }
+
+        combined.sink(receiveValue: { _ in devicesListState.value = .loading })
             .store(in: &cancellables)
 
-        loadActions
-            .combineLatest(
-                devicesListSettingsService.osFilter,
-                devicesListSettingsService.projectFilter,
-                devicesListSettingsService.availableOnly
-            )
-            .flatMap {
-                devicesManagementService.loadDevices(with: $1, project: $2, available: $3)
+        combined.flatMap {
+                devicesManagementService.loadDevices(with: $0, project: $1, available: $2)
                     .map { .devices($0) }
                     .catch { Just(.error($0)) }
             }
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { devicesListState.value = $0 }
-            )
+            .sink(receiveValue: { devicesListState.value = $0 })
             .store(in: &cancellables)
+
+        devicesManagementService.deviceUpdates(deviceId: nil).sink(receiveValue: { [weak self] device in
+            guard let self = self else { return }
+
+            if case .devices(var devices) = devicesListState.value, let index = devices.firstIndex(where: { $0.id == device.id }) {
+                devices[index] = device
+                devicesListState.value = .devices(devices)
+            }
+        }).store(in: &cancellables)
     }
 }

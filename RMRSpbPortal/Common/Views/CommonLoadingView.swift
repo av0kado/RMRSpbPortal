@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingView: UIView {
+class CommonLoadingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -37,7 +37,7 @@ class LoadingView: UIView {
     }()
 
     private func setup() {
-        backgroundColor = UIColor.systemGray.withAlphaComponent(0.7)
+        backgroundColor = .systemFill
         addSubview(activityIndicator.forAutoLayout())
         activityIndicator.constrainToCenter(in: self)
     }

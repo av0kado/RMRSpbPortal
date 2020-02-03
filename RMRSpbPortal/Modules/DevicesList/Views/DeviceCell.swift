@@ -39,14 +39,14 @@ class DeviceCell: UITableViewCell {
 
     private let osLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .tertiaryLabel
+        label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14)
         return label
     }()
 
     private let statusLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .tertiaryLabel
+        label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14)
         label.textAlignment = .right
         return label

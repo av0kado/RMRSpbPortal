@@ -32,8 +32,8 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
         return tableView
     }()
 
-    private let errorView: DevicesListErrorView = DevicesListErrorView()
-    private let loadingView: LoadingView = LoadingView()
+    private let errorView: CommonErrorView = CommonErrorView()
+    private let loadingView: CommonLoadingView = CommonLoadingView()
 
     // MARK: - Lifecycle
 
@@ -57,6 +57,7 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
 
     private func setupViews() {
         navigationItem.title = "Devices list"
+        view.backgroundColor = .systemBackground
 
         view.addSubview(tableView.forAutoLayout())
         tableView.constrainToFill(view)
@@ -65,9 +66,12 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
 
         view.addSubview(errorView.forAutoLayout())
         errorView.constrainToFill(view)
-        errorView.didTapRefresh = { [weak self] in
+        errorView.retryAction = { [weak self] in
             self?.viewModel.reload()
         }
+
+        view.addSubview(loadingView.forAutoLayout())
+        loadingView.constrainToFill(view)
     }
 
     private func setupBindings() {
@@ -80,19 +84,27 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     private func update(with state: DevicesListState) {
+        var tableViewHidden = true
+        var loadingViewHidden = true
+        var errorViewHidden = true
         switch state {
             case .devices(let devices):
                 self.devices = devices
                 tableView.reloadData()
-                loadingView.stop()
-                errorView.isHidden = true
+                tableViewHidden = false
             case .error(let error):
-                loadingView.stop()
                 errorView.descriptionText = error.localizedDescription
-                errorView.isHidden = false
+                errorViewHidden = false
             case .loading:
-                loadingView.start()
-                errorView.isHidden = true
+                loadingViewHidden = false
+        }
+        tableView.isHidden = tableViewHidden
+        loadingView.isHidden = loadingViewHidden
+        errorView.isHidden = errorViewHidden
+        if loadingViewHidden {
+            loadingView.stop()
+        } else {
+            loadingView.start()
         }
     }
 
@@ -109,6 +121,7 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         viewModel.select(device: devices[indexPath.row])
     }
 

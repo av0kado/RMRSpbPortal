@@ -10,6 +10,7 @@ import Foundation
 import Combine
 
 class MockDevicesManagementService: DevicesManagementService {
+    private let requestDelay: Double = 1
     private lazy var mockProjects: [Project] = [
         Project(id: UUID().uuidString, name: "Project one"),
         Project(id: UUID().uuidString, name: "Project two"),
@@ -108,9 +109,11 @@ class MockDevicesManagementService: DevicesManagementService {
         )
     ]
 
+    private let deviceUpdatesSubject: PassthroughSubject<Device, Never> = PassthroughSubject()
+
     func loadOperatingSystems() -> Future<[Device.OperatingSystem], Error> {
         Future { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.requestDelay) {
                 completion(.success(Array(Set(self.mockDevices.map { $0.operatingSystem }))))
             }
         }
@@ -122,15 +125,15 @@ class MockDevicesManagementService: DevicesManagementService {
         available: Bool
     ) -> Future<[Device], Error> {
         Future { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.requestDelay) {
                 completion(.success(self.mockDevices))
             }
         }
     }
 
-    func device(withId id: String) -> Future<Device, Error> {
+    func device(with id: Device.ID) -> Future<Device, Error> {
         Future { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.requestDelay) {
                 if let device = self.mockDevices.first(where: { $0.id == id }) {
                     completion(.success(device))
                 } else {
@@ -142,14 +145,23 @@ class MockDevicesManagementService: DevicesManagementService {
 
     func update(device: Device) -> Future<(), Error> {
         Future { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.requestDelay) {
                 if let index = self.mockDevices.firstIndex(where: { $0.id == device.id }) {
                     self.mockDevices[index] = device
                     completion(.success(()))
+                    self.deviceUpdatesSubject.send(device)
                 } else {
                     completion(.failure(DeviceError.notFound))
                 }
             }
+        }
+    }
+
+    func deviceUpdates(deviceId: Device.ID?) -> AnyPublisher<Device, Never> {
+        if let deviceId = deviceId {
+            return deviceUpdatesSubject.filter { $0.id == deviceId }.eraseToAnyPublisher()
+        } else {
+            return deviceUpdatesSubject.eraseToAnyPublisher()
         }
     }
 }

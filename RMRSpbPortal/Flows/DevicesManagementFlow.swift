@@ -14,15 +14,23 @@ class DevicesManagementFlow: DependencyInjectionContainerDependency, ModuleFacto
     var container: DependencyInjectionContainer!
     var moduleFactory: ModuleFactory!
 
+    weak var navigationController: UINavigationController?
+
     func startViewController() -> UIViewController {
-        return UINavigationController(rootViewController: devicesListViewController())
+        let navigationController = UINavigationController(rootViewController: devicesListViewController())
+        self.navigationController = navigationController
+        return navigationController
     }
 
     private func devicesListViewController() -> UIViewController {
         var (module, controller) = moduleFactory.devicesList()
-        module.didSelectDevice = {
-            print("Did select device: \($0)")
-        }
+        module.didSelectDevice = { self.navigationController?.present(self.deviceDetailsViewController(deviceId: $0), animated: true) }
+        return controller
+    }
+
+    private func deviceDetailsViewController(deviceId: Device.ID) -> UIViewController {
+        var (module, controller) = moduleFactory.deviceDetails()
+        module.deviceId = deviceId
         return controller
     }
 }

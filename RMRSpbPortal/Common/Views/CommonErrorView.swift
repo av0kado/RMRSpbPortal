@@ -1,5 +1,5 @@
 //
-//  DevicesListErrorView.swift
+//  CommonErrorView.swift
 //  RMRSpbPortal
 //
 //  Created by Amir Zigangaraev on 07.01.2020.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DevicesListErrorView: UIView {
+class CommonErrorView: UIView {
     var descriptionText: String? {
         get { descriptionLabel.text }
         set { descriptionLabel.text = newValue }
     }
-    var didTapRefresh: (() -> Void)?
+    var retryAction: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,9 +34,10 @@ class DevicesListErrorView: UIView {
         return label
     }()
 
-    private let refreshButton: UIButton = {
+    private let retryButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
+        button.setTitle("Retry", for: .normal)
         return button
     }()
 
@@ -48,14 +49,14 @@ class DevicesListErrorView: UIView {
         addSubview(descriptionLabel.forAutoLayout())
         descriptionLabel.constrainToCenter(in: self)
         descriptionLabel.constrainToFill(self, top: nil, bottom: nil, leading: 20, trailing: 20)
-        addSubview(refreshButton.forAutoLayout())
-        refreshButton.constrainToCenter(in: self, yOffset: nil)
-        refreshButton.topAnchor.constrain(to: descriptionLabel.bottomAnchor, constant: 20)
+        addSubview(retryButton.forAutoLayout())
+        retryButton.constrainToCenter(in: self, yOffset: nil)
+        retryButton.topAnchor.constrain(to: descriptionLabel.bottomAnchor, constant: 20)
 
-        refreshButton.addTarget(self, action: #selector(refreshTap), for: .touchUpInside)
+        retryButton.addTarget(self, action: #selector(retryTap), for: .touchUpInside)
     }
 
-    @objc private func refreshTap() {
-        didTapRefresh?()
+    @objc private func retryTap() {
+        retryAction?()
     }
 }

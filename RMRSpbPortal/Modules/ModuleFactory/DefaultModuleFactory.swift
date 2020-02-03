@@ -20,4 +20,10 @@ class DefaultModuleFactory: ModuleFactory, DependencyInjectionContainerDependenc
         let view = DevicesListViewController(viewModel: viewModel)
         return (viewModel, view)
     }
+
+    func deviceDetails() -> (DeviceDetailsModule, UIViewController) {
+        let viewModel = DefaultDeviceDetailsViewModel(devicesManagementService: container.resolveOrDie())
+        let view = DeviceDetailsViewController(viewModel: viewModel)
+        return (viewModel, view)
+    }
 }
