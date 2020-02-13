@@ -8,7 +8,6 @@
 
 import UIKit
 import Combine
-import CombineCocoa
 
 class DevicesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private let viewModel: DevicesListViewModel

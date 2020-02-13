@@ -14,7 +14,6 @@
 		23EA60CB23DDEDCC009125B6 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60CA23DDEDCC009125B6 /* ModuleFactory.swift */; };
 		23EA60CD23DDEE38009125B6 /* ModuleFactoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60CC23DDEE38009125B6 /* ModuleFactoryDependency.swift */; };
 		23EA60CF23DDEEB6009125B6 /* DefaultModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EA60CE23DDEEB6009125B6 /* DefaultModuleFactory.swift */; };
-		23EC85CA23C4B38A00A20E88 /* CombineCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EC85C923C4B38A00A20E88 /* CombineCocoa.framework */; };
 		23EC85D123C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EC85D023C4BB4600A20E88 /* NSLayoutConstraintExtensions.swift */; };
 		23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FE050B23BA462E00DBD772 /* Legacy.framework */; };
 		630DA67C236CDF440066DDE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DA67B236CDF440066DDE6 /* AppDelegate.swift */; };
@@ -107,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23EC85CA23C4B38A00A20E88 /* CombineCocoa.framework in Frameworks */,
 				23FE050C23BA462E00DBD772 /* Legacy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,14 +426,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Legacy.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CombineCocoa.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Legacy.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CombineCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
