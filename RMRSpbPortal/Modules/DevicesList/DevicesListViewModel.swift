@@ -6,6 +6,7 @@
 // Copyright (c) 2020 RedMadRobot. All rights reserved.
 //
 
+import Foundation
 import Combine
 
 enum DevicesListState {
@@ -41,39 +42,28 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
 
     // MARK: -
 
-    private let loadActions: PassthroughSubject<(), Never>
-    private var cancellables: Set<AnyCancellable> = []
+    private let loadActions: PassthroughSubject<Void, Never>
 
     init(devicesManagementService: DevicesManagementService, devicesListSettingsService: DevicesListSettingsService) {
         loadActions = PassthroughSubject()
 
-        let devicesListState = CurrentValueSubject<DevicesListState, Never>(.loading)
-        devicesListStatePublisher = devicesListState.eraseToAnyPublisher()
-
-        let deviceListUpdates = loadActions
+        let updates = loadActions
             .combineLatest(
                 devicesListSettingsService.osFilter,
                 devicesListSettingsService.projectFilter,
                 devicesListSettingsService.availableOnly
             )
-            .map { ($1, $2, $3) }
 
-        deviceListUpdates.sink(receiveValue: { _ in devicesListState.value = .loading })
-            .store(in: &cancellables)
-
-        deviceListUpdates.flatMap {
-                devicesManagementService.loadDevices(with: $0, project: $1, available: $2)
-                    .map { .devices($0) }
-                    .catch { Just(.error($0)) }
-            }
-            .sink(receiveValue: { devicesListState.value = $0 })
-            .store(in: &cancellables)
-
-        devicesManagementService.deviceUpdates(deviceId: nil).sink(receiveValue: { device in
-            if case .devices(var devices) = devicesListState.value, let index = devices.firstIndex(where: { $0.id == device.id }) {
-                devices[index] = device
-                devicesListState.value = .devices(devices)
-            }
-        }).store(in: &cancellables)
+        devicesListStatePublisher = updates
+            .map { _, _, _, _ in DevicesListState.loading }
+            .merge(
+                with: updates
+                    .flatMap { _, os, project, available in
+                        devicesManagementService.loadDevices(with: os, project: project, available: available)
+                            .map { DevicesListState.devices($0) }
+                            .catch { Just(.error($0)) }
+                    }
+            )
+            .eraseToAnyPublisher()
     }
 }

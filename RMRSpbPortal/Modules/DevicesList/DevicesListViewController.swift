@@ -31,6 +31,7 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
         return tableView
     }()
 
+    private let refreshControl = UIRefreshControl()
     private let errorView: CommonErrorView = CommonErrorView()
     private let loadingView: CommonLoadingView = CommonLoadingView()
 
@@ -62,6 +63,8 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.constrainToFill(view)
         tableView.delegate = self
         tableView.dataSource = self
+        refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
+        tableView.refreshControl = refreshControl
 
         view.addSubview(errorView.forAutoLayout())
         errorView.constrainToFill(view)
@@ -105,6 +108,13 @@ class DevicesListViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             loadingView.start()
         }
+        refreshControl.endRefreshing()
+    }
+
+    // MARK: - Actions
+
+    @objc private func reload() {
+        viewModel.reload()
     }
 
     // MARK: - Table view
