@@ -50,7 +50,7 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
         let devicesListState = CurrentValueSubject<DevicesListState, Never>(.loading)
         devicesListStatePublisher = devicesListState.eraseToAnyPublisher()
 
-        let combined = loadActions
+        let deviceListUpdates = loadActions
             .combineLatest(
                 devicesListSettingsService.osFilter,
                 devicesListSettingsService.projectFilter,
@@ -58,10 +58,10 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
             )
             .map { ($1, $2, $3) }
 
-        combined.sink(receiveValue: { _ in devicesListState.value = .loading })
+        deviceListUpdates.sink(receiveValue: { _ in devicesListState.value = .loading })
             .store(in: &cancellables)
 
-        combined.flatMap {
+        deviceListUpdates.flatMap {
                 devicesManagementService.loadDevices(with: $0, project: $1, available: $2)
                     .map { .devices($0) }
                     .catch { Just(.error($0)) }
@@ -69,9 +69,7 @@ class DefaultDevicesListViewModel: DevicesListModule, DevicesListViewModel {
             .sink(receiveValue: { devicesListState.value = $0 })
             .store(in: &cancellables)
 
-        devicesManagementService.deviceUpdates(deviceId: nil).sink(receiveValue: { [weak self] device in
-            guard let self = self else { return }
-
+        devicesManagementService.deviceUpdates(deviceId: nil).sink(receiveValue: { device in
             if case .devices(var devices) = devicesListState.value, let index = devices.firstIndex(where: { $0.id == device.id }) {
                 devices[index] = device
                 devicesListState.value = .devices(devices)
